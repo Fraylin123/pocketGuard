@@ -1,0 +1,166 @@
+html {zoom: 75%;}
+
+body { 
+    background-color:rgb(68, 4, 4);
+} 
+
+  
+  /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 30px;
+    transition: height 3s, transform 3s;
+    height: 50px;
+    
+  }
+  
+  .topnav a {
+    transition-timing-function: ease;
+  } 
+  
+  .topnav a:hover {
+    background-color: rgb(219, 92, 92);
+    color: black;
+    height: 150px;
+    transform: rotate(360deg) ;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #f31a1a;
+    color: white;
+  }
+
+  #logo {
+    width: 120px;
+    transition: width 2s;
+  }
+  
+  #logo:hover {
+    width: 200px;
+    
+  }
+
+#logo2 {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  margin-left: 700px;
+  padding: 30px;
+  
+}
+
+
+
+#stuff {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+
+.box1 {
+  width: 400px;
+  height: 200px;
+  border: 1px solid #999;
+  font-size: 30px;
+  color: rgba(209, 34, 63, 0.781);
+  background-color: rgb(219, 219, 219);
+  border-radius: 5px;
+  box-shadow: 4px 4px #ccc;
+  font-family: 'sans-serif';
+ 
+}
+
+#box1content {
+  display: flex;
+  justify-content: center;
+}
+
+.box2 {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #999;
+  font-size: 25px;
+  color: #1c87c9;
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 10px 10px #ccc;
+  margin: 0px 10px
+  
+}
+
+
+
+#main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 100px;
+  padding: 20px;
+}
+
+select {
+  width: 50px;
+  font-size: 20px;
+}
+
+.dropboxes{
+  margin: 20px 40px;
+
+}
+
+#fix{
+  margin: 1px 40px;;
+}
+
+.boxTitles{
+  text-align:center;
+}
+
+.bills{
+  color:white;
+  border: 5px solid black;
+}
+
+li{
+  display: inline;
+}
+
+ol{
+  padding-left: 350px;
+}
+
+span{
+  padding-left:700px;
+}
+
+#button {
+  width: 100px;
+  background-color: rgb(83, 80, 80);
+  color: white;
+  font-size: 30px;
+  float:right;
+  margin-right:80px;
+  margin-bottom: 20px;
+}
+
+.question p{
+  color:white;
+}
+input{
+  width: 40px;
+  height: 20px;
+  margin-left: 20px;
+}

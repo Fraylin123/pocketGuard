@@ -1,0 +1,148 @@
+html {zoom: 75%;}
+
+body { 
+    background-color:rgb(68, 4, 4);
+} 
+
+  
+  /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 30px;
+    transition: height 3s, transform 3s;
+    height: 50px;
+    
+  }
+  
+  .topnav a {
+    transition-timing-function: ease;
+  } 
+  
+  .topnav a:hover {
+    background-color: rgb(219, 92, 92);
+    color: black;
+    height: 150px;
+    transform: rotate(360deg) ;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #f31a1a;
+    color: white;
+  }
+
+  #logo {
+    width: 120px;
+    transition: width 2s;
+  }
+  
+  #logo:hover {
+    width: 200px;
+    
+  } 
+
+#all {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+#title {
+  color: white; 
+  display: flex;
+ justify-content: center;
+}
+
+#lrcontainer {
+  color: white; 
+  display: flex;
+  flex-direction: row;
+  
+}
+
+#left {
+  display: flex;
+  flex-direction: column;
+  border: honeydew;
+  border-width: 5px;
+  border-style: solid;
+  margin-left: 20px; 
+  padding: 20px;
+}
+
+#ylogo {
+  width: 250px;
+}
+
+#dclogo {
+  width: 250px;
+}
+
+#ytext { 
+  color: white;
+  font-size: 19px;
+  padding: 10px;
+  border: honeydew;
+  border-width: 5px;
+  border-style: double;
+  margin-left: 20px; 
+} 
+
+#dctext { 
+  color: white;
+  font-size: 19px;
+  padding: 10px;
+  border: honeydew;
+  border-width: 5px;
+  border-style: double;
+  margin-left: 20px;
+}
+
+#right { 
+display: flex; 
+flex-direction: column;
+display: flex;
+flex-direction: column;
+border: honeydew;
+border-width: 5px;
+border-style: solid;
+margin-left: 20px; 
+padding: 20px;
+} 
+
+#amologo {
+  width: 300px;
+  height: 170px;
+} 
+
+#atext { 
+  color: white;
+  font-size: 19px;
+  padding: 10px;
+  border: honeydew;
+  border-width: 5px;
+  border-style: double;
+  margin-left: 20px;
+}
+
+.calculationsC {
+  display: flex;
+  justify-content: center;
+}
+
+.calculations {
+  color: white;
+  font-size: xx-large;
+  font-weight: bolder;
+}
