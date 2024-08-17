@@ -42,16 +42,8 @@ body {
 }
 
 #logo {
-  width: 120px;
-  transition: width 2s;
+  width: 150px;
 }
-
-#logo:hover {
-  width: 200px;
-  
-}
-
-/*adshfkjadshfkjldashfkjhadskjfhaskljdfhajlshdfjlsdhfkajshkj*/
 
 #all {
   display: flex;
@@ -101,8 +93,6 @@ body {
 
 } 
 
-
-/**usadflhahfdshfadsuifidusfhausdfhluiadshfuiadshfhfdusk*/
 #left {
   border-width: 2px;
   border-style: dashed;

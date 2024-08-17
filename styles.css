@@ -44,14 +44,10 @@ body {
   }
 
 #logo {
-  width: 120px;
-  transition: width 2s;
+  width: 150px;
+
 }
 
-#logo:hover {
-  width: 200px;
-  
-}
 
 #subscriptionsNumber {
   font-size: 24px;
@@ -74,22 +70,10 @@ body {
   font-size: 30px;
   font-weight: bolder;
   background-color: red;
-  animation-name: example;
-  animation-duration: 15s;
-  animation-iteration-count: 100;
-
+ 
 }
   
-  @keyframes example {
-    from {background-color: red;}
-    0% {background-color: rgb(255, 17, 0);}
-    20% {background-color: orange;}
-    40% {background-color: yellow;}
-    60% {background-color: rgb(62, 128, 0);}
-    80% {background-color: rgb(0, 132, 255);}
-    95%{background-color: rgb(107, 0, 128);}
-    100%{background-color: red;}
-}
+ 
 
 .user_input{
   display: flex;
@@ -99,6 +83,7 @@ body {
 #subscriptionContainer1{
   display:flex;
   flex-direction:row;
+  padding: 20px;
 
 }
 
