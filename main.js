@@ -1,10 +1,8 @@
 let subscriptionsNumberValue = 0; 
 const subscriptionsArray = [];
 
-
 //Start if condition here
 
-if (document.title == "firstPage"){
 const subscriptionsNumber = document.getElementById("subscriptionsNumber");
 subscriptionsNumber.addEventListener("change", onChange);
 let button = document.getElementById("submitButton");
@@ -19,16 +17,17 @@ document.querySelector("#subscriptionContainer7").style.display = "none";
 document.querySelector("#subscriptionContainer8").style.display = "none";
 document.querySelector("#subscriptionContainer9").style.display = "none";
 document.querySelector("#subscriptionContainer10").style.display = "none";
-}
-//End here
+
 
 function buttonClick() {
   subscriptionsNumberValue = document.getElementById("subscriptionsNumber").value;
+
   
   for (let i = 1; i <= subscriptionsNumberValue; i++){
     let currentSubscription = {
       name : document.getElementById("subscription"+i).value,
-      price: document.getElementById("price"+i).getElementsByTagName("input")[0].value
+      price: document.getElementById("price"+i).getElementsByTagName("input")[0].value,
+      status: document.getElementById("status"+i).value
     };
 
     subscriptionsArray.push(currentSubscription);
