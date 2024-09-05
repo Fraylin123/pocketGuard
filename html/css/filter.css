@@ -11,6 +11,15 @@ body {
 
   
   /* Add a color to the active/current link */
+  .topnav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    
+  }
+
   .topnav a.active {
     background-color: #f31a1a;
     color: white;
@@ -18,19 +27,12 @@ body {
 
  
   
-  #logo:hover {
+  #logo {
     width: 200px;
     
   }
 
-#logo2 {
-  width: 200px;
-  height: 150px;
-  display: flex;
-  margin: auto;
-  padding: 30px;
-  
-}
+
 
 
 

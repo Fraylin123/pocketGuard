@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: center;
     justify-content: space-around;
+    
   }
   
   .topnav a {
@@ -20,21 +21,11 @@ body {
     padding: 14px 30px;
     text-decoration: none;
     font-size: 30px;
-    transition: height 3s, transform 3s;
     height: 50px;
     
   }
   
-  .topnav a {
-    transition-timing-function: ease;
-  } 
-  
-  .topnav a:hover {
-    background-color: rgb(219, 92, 92);
-    color: black;
-    height: 150px;
-    transform: rotate(360deg) ;
-  }
+
   
   /* Add a color to the active/current link */
   .topnav a.active {
@@ -43,14 +34,9 @@ body {
   }
 
   #logo {
-    width: 120px;
-    transition: width 2s;
-  }
-  
-  #logo:hover {
     width: 200px;
-    
-  } 
+  }
+
 
 #all {
   display: flex;
@@ -139,6 +125,15 @@ padding: 20px;
 .calculationsC {
   display: flex;
   justify-content: center;
+  background-color: rgb(29, 28, 28);
+  width:fit-content;
+  border: honeydew;
+  border-width: 5px;
+  border-style: ridge;
+  
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 20px 10px 7px rgb(43, 42, 42);
 }
 
 .calculations {
