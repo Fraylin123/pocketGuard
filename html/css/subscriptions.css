@@ -14,27 +14,6 @@ body {
   
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  padding: 14px 30px;
-  text-decoration: none;
-  font-size: 30px;
-  transition: height 3s, transform 3s;
-  height: 50px;
-  
-}
-
-.topnav a {
-  transition-timing-function: ease;
-} 
-
-.topnav a:hover {
-  background-color: rgb(219, 92, 92);
-  color: black;
-  height: 150px;
-  transform: rotate(360deg) ;
-}
 
 .topnav a.active {
   background-color: #f31a1a;
@@ -54,6 +33,7 @@ body {
 
 #slogo {
   width: 250px;
+  height:130px;
   border: honeydew;
   border-width: 5px;
   border-style: double;
