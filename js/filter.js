@@ -9,7 +9,6 @@ console.log(number);
 let totalPrice = 0;
 for (let i=0; i < number; i++){
     totalPrice+=parseInt(array[i].price);
-    console.log(array[i]);
     const liElement = document.createElement("li");
     const textNode = document.createTextNode(array[i].name + ": $" + array[i].price + "\t");
     liElement.style.marginLeft= '10px';

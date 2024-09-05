@@ -115,17 +115,17 @@ body {
 } 
 
 #bottomC {
-  display: flex;
-  position: absolute;
-  bottom: -650px;
+  display: block;
   background-color: rgb(29, 28, 28);
+  width:fit-content;
   border: honeydew;
   border-width: 5px;
   border-style: ridge;
-  margin-left: 20px;
+  
+  margin: 30px auto;
   padding: 30px;
   box-shadow: 20px 10px 7px rgb(43, 42, 42);
-  margin-top: 30px;
+  
  
 }
 
@@ -139,6 +139,7 @@ opacity:  0%;
   opacity: fixed;
 }
 
+/*Fix this later make the box stay in the middle*/ 
 #bottom {
   color: white;
   font-weight: bold;

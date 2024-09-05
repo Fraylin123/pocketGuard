@@ -4,9 +4,10 @@ let number = localStorage.getItem('number')
 
 const leftSide = document.getElementById("left");
 const rightSide = document.getElementById("right");
+const totalEl = document.getElementById("totalc");
+let totalCost = 0;
 
 for (let i=0; i < number; i++){
-    
     const divElement = document.createElement("div");
     const imgElement = document.createElement("img");
     const pElement = document.createElement("p");
@@ -23,6 +24,10 @@ for (let i=0; i < number; i++){
         divElement.append(pElement);
         
         leftSide.appendChild(divElement);
+        const priceElement = document.createElement("p");
+        priceElement.innerHTML = "$"+ array[i].price;
+        totalCost+=parseInt(array[i].price);
+        totalEl.appendChild(priceElement);
 
     }
     else if (array[i].status == "Inactive"){
@@ -36,13 +41,11 @@ for (let i=0; i < number; i++){
         divElement.append(pElement);
         
         rightSide.appendChild(divElement);
-
     }
-
     
-
-    
-   
-
 
 }
+const hElement = document.createElement("h2");
+const textNode = document.createTextNode("$" + totalCost);
+hElement.appendChild(textNode);
+totalEl.appendChild(hElement);
