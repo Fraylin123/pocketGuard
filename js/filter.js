@@ -1,10 +1,9 @@
 
 let array = JSON.parse(localStorage.getItem('subscriptionsArray'));
-let number = localStorage.getItem('number')
+let number = localStorage.getItem('number');
+let ranks = {};
+let category = ['Movies','Shopping','Music','Gaming','Utilities'];
 
-
-console.log(array);
-console.log(number);
 
 let totalPrice = 0;
 for (let i=0; i < number; i++){
@@ -25,6 +24,12 @@ const totalNode = document.createTextNode("Your total: " + "$" + totalPrice);
 spanElement.appendChild(totalNode);
 billsDiv.appendChild(spanElement);
 
+const dropboxes = document.getElementsByClassName("dropboxes");
 
 
-console.log(totalPrice);
+function clickLogic(){
+    for (let i = 0; i < dropboxes.length; i++){
+        ranks[category[i]] = dropboxes[i].value;
+    }  
+    localStorage.setItem('categoriesRank', JSON.stringify(ranks));
+}
