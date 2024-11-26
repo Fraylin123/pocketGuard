@@ -3,6 +3,7 @@ let array = JSON.parse(localStorage.getItem('subscriptionsArray'));
 let number = localStorage.getItem('number');
 let ranks = {};
 let category = ['Movies','Shopping','Music','Gaming','Utilities'];
+let targetPrice = 0;
 
 
 let totalPrice = 0;
@@ -31,5 +32,7 @@ function clickLogic(){
     for (let i = 0; i < dropboxes.length; i++){
         ranks[category[i]] = dropboxes[i].value;
     }  
+    targetPrice = document.getElementById('targetPrice').value;
     localStorage.setItem('categoriesRank', JSON.stringify(ranks));
+    localStorage.setItem('targetCost', targetPrice );
 }

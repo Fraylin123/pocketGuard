@@ -45,7 +45,9 @@ for (let i=0; i < number; i++){
     
 
 }
+
 const hElement = document.createElement("h2");
 const textNode = document.createTextNode("$" + totalCost);
 hElement.appendChild(textNode);
 totalEl.appendChild(hElement);
+localStorage.setItem("cost",totalCost);

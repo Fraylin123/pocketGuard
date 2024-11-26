@@ -141,3 +141,13 @@ padding: 20px;
   font-size: xx-large;
   font-weight: bolder;
 }
+
+.restartButton{
+  width: 120px;
+  background-color: rgb(83, 80, 80);
+  color:white;
+  font-size:30px;
+  margin: 0px 46%;
+  text-decoration:none;
+
+}
