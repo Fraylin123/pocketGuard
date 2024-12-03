@@ -35,4 +35,5 @@ function clickLogic(){
     targetPrice = document.getElementById('targetPrice').value;
     localStorage.setItem('categoriesRank', JSON.stringify(ranks));
     localStorage.setItem('targetCost', targetPrice );
+    localStorage.setItem('inactiveCost', totalPrice);
 }

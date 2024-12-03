@@ -2,8 +2,11 @@ let categoriesRank = JSON.parse(localStorage.getItem('categoriesRank'));
 let targetCost = localStorage.getItem('targetCost');
 let subscriptionsArray = localStorage.getItem('subscriptionsArray');
 let subscriptionsCost = parseInt(localStorage.getItem('cost'));
-let subscribeArray = [];
+let inactiveCost = parseInt(localStorage.getItem('inactiveCost'));
+const inactiveSubscriptions = JSON.parse(localStorage.getItem('inactiveSubscriptions'));
 let unsubscribeArray = [];
+const rightSide = document.getElementById("right");
+const calculations = document.getElementsByClassName("calculations")[0];
 
 let subscriptionJSON = {
     "subscriptions": [
@@ -101,7 +104,38 @@ function inArray(subscriptionName, subscriptionsArray){
     }
   }
   return false;
+}
 
+
+
+
+
+function inactiveSubsCheck(){
+  if (subscriptionsCost <= targetCost && subscriptionsCost <= inactiveCost){
+    for (let i = 0; i < inactiveSubscriptions.length; i++){
+      const imgElement = document.createElement("img");
+      const pElement = document.createElement("p");
+      pElement.id = "atext";
+      pElement.innerHTML =  "We suggest that you unsubscribe to " + inactiveSubscriptions[i] + " as you have listed it as inactive";
+      imgElement.id="amologo";
+      imgElement.src = "html/images/" + inactiveSubscriptions[i] + ".png";
+      rightSide.appendChild(imgElement);
+      rightSide.appendChild(pElement);
+      
+    }
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+
+function unsubscribeLogic(){
+  for (let i = 0; i < subscriptionsArray.length; i++){
+
+
+  }
 }
 
 function alternativesAlg(totalCost, subCost, categoryJSON){
@@ -113,17 +147,31 @@ function alternativesAlg(totalCost, subCost, categoryJSON){
 }
 
 
+let subscriptions = [];
 
-console.log("The cost is: " + subscriptionsCost);
-console.log(categoriesRank);
-console.log(targetCost);
-let index = 0;
+//Logic for handling inactive subscriptions
+const pElement1 = document.createElement("p");
+const pElement2 = document.createElement("p");
+const pElement3 = document.createElement("p");
+if (inactiveSubsCheck()){
+  pElement1.innerHTML = "Doing these things will save you " + (inactiveCost-subscriptionsCost) +  " dollars!";
+  pElement2.innerHTML = "Pre Total: - " + "$" + inactiveCost;
+  pElement3.innerHTML = "Total: " + "$" + subscriptionsCost;
+  calculations.appendChild(pElement1);
+  calculations.appendChild(pElement2);
+  calculations.appendChild(pElement3);
+}
+else{
+  pElement1.innerHTML = "No suggestions"
+  calculations.appendChild(pElement1);
+}
 
-let subscriptions =[]
-let alternatives =[]
+
+
 //subscriptionCost = total of the subscriptions prices
 //currentPayingCost - subscription(s) + alternative means unsubscribe from those subscriptions and alternative means to subscribe to that one if the condition is true
-//Assume that movies has netflix,hulu, youtube, and pluto
+
+/*
 while (subscriptionsCost > targetCost){
     let currentCategory = getKeyByValue(categoriesRank, '5');
     console.log("Category is: " + currentCategory);
@@ -141,15 +189,23 @@ while (subscriptionsCost > targetCost){
           //Split the ones that the user listed at the beginning and the alternatives
         }
      }
-
      
-     alternativesAlg(subscriptions, alternatives, )
+     //alternativesAlg(subscriptions, alternatives, )
 
 
-     
     
     break;
     
   
 }
+    */
 //Double loop to check all alternatives and if not found then unsubscribe from the service.
+
+/*
+<img id="amologo" src="html/images/amazon">
+                <p id="atext"> We suggest that you unsuscribe to Amazon Prime as you have listed it as inactive</p>
+
+                <img id="amologo" src="html/images/microsoft365.jpg">
+                <p id="atext"> We suggest that you unsuscribe from microsoft 365 we have provided a cheaper alternative
+                    in the suscribe box.</p>
+*/

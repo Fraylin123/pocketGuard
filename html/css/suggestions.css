@@ -50,22 +50,6 @@ body {
  justify-content: center;
 }
 
-#lrcontainer {
-  color: white; 
-  display: flex;
-  flex-direction: row;
-  
-}
-
-#left {
-  display: flex;
-  flex-direction: column;
-  border: honeydew;
-  border-width: 5px;
-  border-style: solid;
-  margin-left: 20px; 
-  padding: 20px;
-}
 
 #ylogo {
   width: 250px;
@@ -95,12 +79,11 @@ body {
   margin-left: 20px;
 }
 
+
 #right { 
-display: flex; 
-flex-direction: column;
-display: flex;
-flex-direction: column;
-border: honeydew;
+width:50%;
+text-align:center;
+color:white;
 border-width: 5px;
 border-style: solid;
 margin-left: 20px; 
