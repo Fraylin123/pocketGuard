@@ -1,95 +1,17 @@
 let categoriesRank = JSON.parse(localStorage.getItem('categoriesRank'));
 let targetCost = localStorage.getItem('targetCost');
-let subscriptionsArray = localStorage.getItem('subscriptionsArray');
+let subscriptionsArray = JSON.parse(localStorage.getItem('subscriptionsArray'));
 let subscriptionsCost = parseInt(localStorage.getItem('cost'));
 let inactiveCost = parseInt(localStorage.getItem('inactiveCost'));
+const activeSubscriptions = JSON.parse(localStorage.getItem('activeSubscriptions'))
 const inactiveSubscriptions = JSON.parse(localStorage.getItem('inactiveSubscriptions'));
-let unsubscribeArray = [];
 const rightSide = document.getElementById("right");
 const calculations = document.getElementsByClassName("calculations")[0];
+let calculatedCost = 0;
+let unsubscribeArray = [];
 
-let subscriptionJSON = {
-    "subscriptions": [
-      {
-        "Movies": [
-          {
-            "name": "Netflix",
-            "price": "$8",
-            "ads": "No ads",
-            "library": "100,000 movies and TV Shows",
-            "anime": "Few Titles; mostly dubbed",
-          },
-         {
-            "name": "Hulu",
-            "price": "$8",
-            "ads": "Yes, $11.99 monthly for no ads",
-           "library": "Around 1,650 shows and 2,500 movies",
-           "anime": "Many titles: mostly subbed",
-          },
-        ],
-        "Music": {
-          "soundcloud": {
-            "name": "Soundcloud Go +",
-            "price": "$10",
-            "ads":"No ads",
-            "quality": "64Kbps"
-          },
-          "spotify":{
-            "name": "Spotify Premium",
-            "price": "$10",
-            "ads":"No ads",
-            "quality": "320Kbps (Best quality)"
-          }
-        }, 
-        "Shopping":{
-           "amazon": {
-             "name": "Amazon Prime",
-             "price": "$13",
-             "shipping": "Free Two-Day Shipping, Free Same-Day Delivery, Free Release-Date Delivery",
-             "extras": "Free Prime Video access as well as Prime Music and Prime Gaming"    
-  
-            },
-           "walmart": {
-             "name":" Walmart +",
-             "price": "$13",
-             "shipping": "Free Next-Day and Two-Day Shipping",
-             "extras": "Free delivery from your store, Rx for less (Save 85% on seleted prescriptions)"
-             }
-        },
-        "Utilities":{
-              "microsoft":{
-                "name": "Microsoft 365",
-                "price": "$34.90" ,
-                "features": "Access to Microsoft Word, Powerpoint, Excel, Publisher, Outlook, OneNote, and Access ",
-  
-              },
-              "avast": {
-                "name": "Avast Antivirus",
-                "price": "$35" ,
-                "features": "Free shipping ",
-  
-              }
-        },
-        "Gaming": {
-            "xbox": {
-              "name": "Xbox Gold",
-              "price":"$9.99" ,
-              "features": "Access over 100+ free games and enable online multiplayer",
-            },
-  
-            "playstation": { 
-              "name": "PlayStation Plus", 
-              "price": "$9.99",
-              "features":"Access online multiplayer, free exclusive games, and a monthly rotation of free downloadable playstation games"
-              
-            }
-  
-          }
-  
-      }
-  
-    ]
-  };
+
+let subscriptionJSON = [{"Movies": ["Netflix", "Hulu"]}, {"Music": ["Spotify Premium", "Soundcloud Music"]}, {"Shopping": ["Amazon Prime", "Walmart +"]}, {"Utilities": ["Microsoft 365", "Avast"]}, {"Gaming": ["Xbox Gold", "Playstation +"]}];
 
 //Gets the name of the subscription ranked by the value specified
 
@@ -111,8 +33,8 @@ function inArray(subscriptionName, subscriptionsArray){
 
 
 function inactiveSubsCheck(){
-  if (subscriptionsCost <= targetCost && subscriptionsCost <= inactiveCost){
     for (let i = 0; i < inactiveSubscriptions.length; i++){
+      console.log("Inside inactive function");
       const imgElement = document.createElement("img");
       const pElement = document.createElement("p");
       pElement.id = "atext";
@@ -123,37 +45,137 @@ function inactiveSubsCheck(){
       rightSide.appendChild(pElement);
       
     }
-    return true;
-  }
-  else{
-    return false;
-  }
+ 
 }
 
 
-function unsubscribeLogic(){
+/*
+Algorithm:
+
+Check the lowest categories see what the new cost would be if 
+Say we have category Utilities as 5, retrieve all subs name under category utilities, if one of our subscriptions is in that utility remove them.
+*/
+
+
+function descsortArray(array){
+  let firstIndex = 0;
+  let secondIndex = 0;
   for (let i = 0; i < subscriptionsArray.length; i++){
-
-
-  }
-}
-
-function alternativesAlg(totalCost, subCost, categoryJSON){
-    if (totalCost - subCost + parseInt(categoryJSON[i].price) < parseInt(targetCost) ){
-      console.log(categoryJSON[i].name)
-      return categoryJSON[i].name;
+    if (array[0] == subscriptionsArray[i].name ){
+      firstIndex = i;
+      console.log("-----First index: " + firstIndex);
+    }
+    else if(array[1] == subscriptionsArray[i].name){
+      secondIndex = i;
+      console.log("-----Second index: " + secondIndex);
     }
 
+  }
+
+  if (parseInt(subscriptionsArray[firstIndex].price) < parseInt(subscriptionsArray[secondIndex].price)){
+    array[1] = subscriptionsArray[firstIndex].name;
+    array[0] = subscriptionsArray[secondIndex].name;
+  }
+  else if (parseInt(subscriptionsArray[secondIndex].price) < parseInt(subscriptionsArray[firstIndex].price)){
+    array[1] = subscriptionsArray[secondIndex].name;
+    array[0] = subscriptionsArray[firstIndex].name;
+    
+  }
+  console.log("====Printed array is: " + array);
+  return array;
+
+}
+
+
+
+let complete = false;
+function unsubscribeLogic(){
+  let currentCost = subscriptionsCost;
+  console.log(subscriptionsArray);
+  for (let i = 5; i > 0; --i){
+    if (complete){
+      break;
+    }
+    let currentCategory = getKeyByValue(categoriesRank, i.toString()); //Gets the category name based on the number assigned to it
+    console.log("Current category is: " + currentCategory);
+    let categorySubs = subscriptionJSON.find(sub => sub[currentCategory]); //Gets the subscriptions names that falls in the "currentCategory"
+    console.log(categorySubs);
+    let tempArray = categorySubs[currentCategory];
+    console.log("Temp array is" + "\n" + tempArray);
+    console.log("Inactive subscriptions are:\n" + inactiveSubscriptions);
+    console.log("Active subscriptions are:\n" + activeSubscriptions);
+
+    tempArray = tempArray.filter(sub => activeSubscriptions.includes(sub));
+    console.log("Filtered array is now: \n" + tempArray);
+    descsortArray(tempArray);
+
+   
+    for (let j = 0; j < subscriptionsArray.length; j++){
+      if (tempArray.includes(subscriptionsArray[j].name)){
+        if (tempArray[0] == subscriptionsArray[j].name){
+
+        }
+
+        //Alternative: have the subscriptionsArray already sorted, so that the program automatically recognizes the subscriptions with a higher subscription cost.
+        
+          
+        console.log(subscriptionsArray[j].name + " is included");
+      //Check the two options of tempArray before adding it to the unsubscribeArray in order to decrease the number of unsubscribed suggestions
+      //Make a function that gets the price of the subscription based on the name of it
+        currentCost -=  subscriptionsArray[j].price;
+        console.log(currentCost);
+        if (currentCost <= targetCost){
+          unsubscribeArray.push({"name":subscriptionsArray[j].name, "category": currentCategory});
+          calculatedCost = currentCost;
+          console.log("Found answer");
+          complete = true;
+          console.log(unsubscribeArray);
+          break;
+
+        }
+        else{
+          unsubscribeArray.push({"name":subscriptionsArray[j].name, "category": currentCategory})
+
+        }
+       
+      }
+     
+
+    }
+    
+  }
+
+if (unsubscribeArray.length > 0){
+  for (let i = 0; i < unsubscribeArray.length; i++){
+    const imgElement = document.createElement("img");
+    const pElement = document.createElement("p");
+    pElement.id = "atext";
+    pElement.innerHTML =  "We suggest that you unsubscribe to " + unsubscribeArray[i].name + " as " + unsubscribeArray[i].category + " category have lower priority";
+    imgElement.id="amologo";
+    imgElement.src = "html/images/" + unsubscribeArray[i].name + ".png";
+    rightSide.appendChild(imgElement);
+    rightSide.appendChild(pElement);
+
+  }
+  return true;
+
+}
+  
 }
 
 
 let subscriptions = [];
 
+
 //Logic for handling inactive subscriptions
+
 const pElement1 = document.createElement("p");
 const pElement2 = document.createElement("p");
 const pElement3 = document.createElement("p");
-if (inactiveSubsCheck()){
+let inactiveCondition = inactiveSubscriptions.length > 0 && subscriptionsCost <= inactiveCost
+let unsubscribeCondition = subscriptionsCost > targetCost
+if (inactiveCondition){
+  inactiveSubsCheck()
   pElement1.innerHTML = "Doing these things will save you " + (inactiveCost-subscriptionsCost) +  " dollars!";
   pElement2.innerHTML = "Pre Total: - " + "$" + inactiveCost;
   pElement3.innerHTML = "Total: " + "$" + subscriptionsCost;
@@ -161,9 +183,23 @@ if (inactiveSubsCheck()){
   calculations.appendChild(pElement2);
   calculations.appendChild(pElement3);
 }
-else{
+
+
+if(unsubscribeCondition){
+  unsubscribeLogic()
+  pElement1.innerHTML = "Doing these things will save you " + (inactiveCost-calculatedCost) +  " dollars!";
+  pElement2.innerHTML = "Pre Total: - " + "$" + inactiveCost;
+  pElement3.innerHTML = "Total: " + "$" + calculatedCost;
+  calculations.appendChild(pElement1);
+  calculations.appendChild(pElement2);
+  calculations.appendChild(pElement3);
+
+}
+
+if (!inactiveCondition && !unsubscribeCondition){
   pElement1.innerHTML = "No suggestions"
   calculations.appendChild(pElement1);
+
 }
 
 

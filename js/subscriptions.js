@@ -6,6 +6,7 @@ const leftSide = document.getElementById("left");
 const rightSide = document.getElementById("right");
 const totalEl = document.getElementById("totalc");
 let inactiveSubs = [];
+let activeSubs = [];
 let totalCost = 0;
 
 for (let i=0; i < number; i++){
@@ -28,6 +29,7 @@ for (let i=0; i < number; i++){
         priceElement.innerHTML = "$"+ array[i].price;
         totalCost+=parseInt(array[i].price);
         totalEl.appendChild(priceElement);
+        activeSubs.push(array[i].name);
 
     }
     else if (array[i].status == "Inactive"){
@@ -55,3 +57,4 @@ totalEl.appendChild(hElement);
 
 localStorage.setItem("cost", totalCost);
 localStorage.setItem("inactiveSubscriptions", JSON.stringify(inactiveSubs));
+localStorage.setItem("activeSubscriptions", JSON.stringify(activeSubs));
