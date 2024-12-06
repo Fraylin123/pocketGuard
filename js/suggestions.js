@@ -31,7 +31,6 @@ function inArray(subscriptionName, subscriptionsArray){
 
 
 
-
 function inactiveSubsCheck(){
     for (let i = 0; i < inactiveSubscriptions.length; i++){
       console.log("Inside inactive function");
@@ -45,7 +44,6 @@ function inactiveSubsCheck(){
       rightSide.appendChild(pElement);
       
     }
- 
 }
 
 
@@ -90,6 +88,7 @@ function descsortArray(array){
 
 let complete = false;
 function unsubscribeLogic(){
+  console.log("Check: " + JSON.stringify(activeSubscriptions))
   let currentCost = subscriptionsCost;
   console.log(subscriptionsArray);
   for (let i = 5; i > 0; --i){
@@ -104,28 +103,19 @@ function unsubscribeLogic(){
     console.log("Temp array is" + "\n" + tempArray);
     console.log("Inactive subscriptions are:\n" + inactiveSubscriptions);
     console.log("Active subscriptions are:\n" + activeSubscriptions);
-
-    tempArray = tempArray.filter(sub => activeSubscriptions.includes(sub));
+    tempArray = tempArray.filter(sub => activeSubscriptions.some(activeSub => activeSub.name === sub));
     console.log("Filtered array is now: \n" + tempArray);
-    descsortArray(tempArray);
 
    
-    for (let j = 0; j < subscriptionsArray.length; j++){
-      if (tempArray.includes(subscriptionsArray[j].name)){
-        if (tempArray[0] == subscriptionsArray[j].name){
-
-        }
-
-        //Alternative: have the subscriptionsArray already sorted, so that the program automatically recognizes the subscriptions with a higher subscription cost.
-        
-          
-        console.log(subscriptionsArray[j].name + " is included");
+    for (let j = 0; j < activeSubscriptions.length; j++){
+      if (tempArray.includes(activeSubscriptions[j].name)){
+      console.log(activeSubscriptions[j].name + " is included");
       //Check the two options of tempArray before adding it to the unsubscribeArray in order to decrease the number of unsubscribed suggestions
       //Make a function that gets the price of the subscription based on the name of it
-        currentCost -=  subscriptionsArray[j].price;
+        currentCost -=  activeSubscriptions[j].price;
         console.log(currentCost);
         if (currentCost <= targetCost){
-          unsubscribeArray.push({"name":subscriptionsArray[j].name, "category": currentCategory});
+          unsubscribeArray.push({"name":activeSubscriptions[j].name, "category": currentCategory});
           calculatedCost = currentCost;
           console.log("Found answer");
           complete = true;
@@ -134,8 +124,7 @@ function unsubscribeLogic(){
 
         }
         else{
-          unsubscribeArray.push({"name":subscriptionsArray[j].name, "category": currentCategory})
-
+          unsubscribeArray.push({"name":activeSubscriptions[j].name, "category": currentCategory})
         }
        
       }

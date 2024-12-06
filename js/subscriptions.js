@@ -29,7 +29,7 @@ for (let i=0; i < number; i++){
         priceElement.innerHTML = "$"+ array[i].price;
         totalCost+=parseInt(array[i].price);
         totalEl.appendChild(priceElement);
-        activeSubs.push(array[i].name);
+        activeSubs.push({name:array[i].name, price: array[i].price});
 
     }
     else if (array[i].status == "Inactive"){
@@ -57,4 +57,6 @@ totalEl.appendChild(hElement);
 
 localStorage.setItem("cost", totalCost);
 localStorage.setItem("inactiveSubscriptions", JSON.stringify(inactiveSubs));
+//Sort the active subscriptions array in ascending order based on the price
+activeSubs.sort((a, b) => b.price - a.price);
 localStorage.setItem("activeSubscriptions", JSON.stringify(activeSubs));
