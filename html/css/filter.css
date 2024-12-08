@@ -1,40 +1,31 @@
-html {zoom: 75%;}
+html {
+  zoom: 75%;
+}
 
-body { 
-    background-color:rgb(68, 4, 4);
-} 
+body {
+  background-color: rgb(68, 4, 4);
+}
 
-  
-  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
 
+}
 
-
-  
-  /* Add a color to the active/current link */
-  .topnav {
-    background-color: #333;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    
-  }
-
-  .topnav a.active {
-    background-color: #f31a1a;
-    color: white;
-  }
-
- 
-  
-  #logo {
-    width: 200px;
-    
-  }
+.topnav a.active {
+  background-color: #f31a1a;
+  color: white;
+}
 
 
 
+#logo {
+  width: 200px;
 
+}
 
 #stuff {
   color: white;
@@ -53,7 +44,7 @@ body {
   border-radius: 5px;
   box-shadow: 4px 4px #ccc;
   font-family: 'sans-serif';
- 
+
 }
 
 #box1content {
@@ -71,7 +62,6 @@ body {
   border-radius: 10px;
   box-shadow: 10px 10px #ccc;
   margin: 0px 10px
-  
 }
 
 
@@ -89,34 +79,35 @@ select {
   font-size: 20px;
 }
 
-.dropboxes{
+.dropboxes {
   margin: 20px 40px;
 
 }
 
-#fix{
-  margin: 1px 40px;;
+#fix {
+  margin: 1px 40px;
+  ;
 }
 
-.boxTitles{
-  text-align:center;
+.boxTitles {
+  text-align: center;
 }
 
-.bills{
-  color:white;
+.bills {
+  color: white;
   border: 5px solid black;
 }
 
-li{
+li {
   display: inline;
 }
 
-ol{
+ol {
   padding-left: 350px;
 }
 
-span{
-  padding-left:700px;
+span {
+  padding-left: 700px;
 }
 
 #button {
@@ -124,15 +115,16 @@ span{
   background-color: rgb(83, 80, 80);
   color: white;
   font-size: 30px;
-  float:right;
-  margin-right:80px;
+  float: right;
+  margin-right: 80px;
   margin-bottom: 20px;
 }
 
-.question p{
-  color:white;
+.question p {
+  color: white;
 }
-input{
+
+input {
   width: 40px;
   height: 20px;
   margin-left: 20px;

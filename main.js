@@ -1,168 +1,65 @@
-let subscriptionsNumberValue = 0; 
-const subscriptionsArray = [];
-
-//Start if condition here
+let subscriptionsNumberValue = 0;
+let subscriptionsArray = [];
 
 const subscriptionsNumber = document.getElementById("subscriptionsNumber");
 subscriptionsNumber.addEventListener("change", onChange);
 let button = document.getElementById("submitButton");
 button.onclick = buttonClick;
 
-document.querySelector("#subscriptionContainer2").style.display = "none";
-document.querySelector("#subscriptionContainer3").style.display = "none";
-document.querySelector("#subscriptionContainer4").style.display = "none";
-document.querySelector("#subscriptionContainer5").style.display = "none";
-document.querySelector("#subscriptionContainer6").style.display = "none";
-document.querySelector("#subscriptionContainer7").style.display = "none";
-document.querySelector("#subscriptionContainer8").style.display = "none";
-document.querySelector("#subscriptionContainer9").style.display = "none";
-document.querySelector("#subscriptionContainer10").style.display = "none";
+for (let i = 2; i <= 10; i++) {
+  document.querySelector(`#subscriptionContainer${i}`).style.display = "none";
+}
 
 
 function buttonClick() {
   subscriptionsNumberValue = document.getElementById("subscriptionsNumber").value;
+  let subnameSet = new Set();
+  for (let i = 1; i <= subscriptionsNumberValue; i++) {
+    let nameElement = document.getElementById("subscription" + i).value
+    let priceElement = document.getElementById("price" + i).getElementsByTagName("input")[0].value
+    let statusElement = document.getElementById("status" + i).value
 
-  
-  for (let i = 1; i <= subscriptionsNumberValue; i++){
-    let currentSubscription = {
-      name : document.getElementById("subscription"+i).value,
-      price: document.getElementById("price"+i).getElementsByTagName("input")[0].value,
-      status: document.getElementById("status"+i).value
+    if (!priceElement || isNaN(priceElement)) {
+      alert(nameElement + " price is not a valid number or is empty, please fix to continue");
+      subscriptionsArray = [];
+      return;
+    }
+    if (statusElement.length < 1) {
+      alert(nameElement + " is missing an active/inactive value, please fix to continue");
+      subscriptionsArray = [];
+      return;
+    }
+
+    if (subnameSet.has(nameElement)) {
+      alert(nameElement + " was already selected, choose a different subscription");
+      subscriptionsArray = [];
+      return;
+    }
+
+    subnameSet.add(nameElement);
+
+    const currentSubscription = {
+      name: nameElement,
+      price: priceElement,
+      status: statusElement
     };
 
     subscriptionsArray.push(currentSubscription);
   }
+
   localStorage.setItem('subscriptionsArray', JSON.stringify(subscriptionsArray));
   localStorage.setItem("number", subscriptionsNumberValue);
-  
+  window.location.href = 'filter.html';
+
+
 }
 
 function onChange() {
-  subscriptionsNumberValue = document.getElementById(
-    "subscriptionsNumber"
-  ).value;
-  if (subscriptionsNumberValue == 1) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "none";
-    document.querySelector("#subscriptionContainer3").style.display = "none";
-    document.querySelector("#subscriptionContainer4").style.display = "none";
-    document.querySelector("#subscriptionContainer5").style.display = "none";
-    document.querySelector("#subscriptionContainer6").style.display = "none";
-    document.querySelector("#subscriptionContainer7").style.display = "none";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 2) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "none";
-    document.querySelector("#subscriptionContainer4").style.display = "none";
-    document.querySelector("#subscriptionContainer5").style.display = "none";
-    document.querySelector("#subscriptionContainer6").style.display = "none";
-    document.querySelector("#subscriptionContainer7").style.display = "none";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 3) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "none";
-    document.querySelector("#subscriptionContainer5").style.display = "none";
-    document.querySelector("#subscriptionContainer6").style.display = "none";
-    document.querySelector("#subscriptionContainer7").style.display = "none";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 4) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "none";
-    document.querySelector("#subscriptionContainer6").style.display = "none";
-    document.querySelector("#subscriptionContainer7").style.display = "none";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 5) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "flex";
-    document.querySelector("#subscriptionContainer6").style.display = "none";
-    document.querySelector("#subscriptionContainer7").style.display = "none";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 6) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "flex";
-    document.querySelector("#subscriptionContainer6").style.display = "flex";
-    document.querySelector("#subscriptionContainer7").style.display = "none";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 7) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "flex";
-    document.querySelector("#subscriptionContainer6").style.display = "flex";
-    document.querySelector("#subscriptionContainer7").style.display = "flex";
-    document.querySelector("#subscriptionContainer8").style.display = "none";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 8) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "flex";
-    document.querySelector("#subscriptionContainer6").style.display = "flex";
-    document.querySelector("#subscriptionContainer7").style.display = "flex";
-    document.querySelector("#subscriptionContainer8").style.display = "flex";
-    document.querySelector("#subscriptionContainer9").style.display = "none";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 9) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "flex";
-    document.querySelector("#subscriptionContainer6").style.display = "flex";
-    document.querySelector("#subscriptionContainer7").style.display = "flex";
-    document.querySelector("#subscriptionContainer8").style.display = "flex";
-    document.querySelector("#subscriptionContainer9").style.display = "flex";
-    document.querySelector("#subscriptionContainer10").style.display = "none";
-    document.querySelector("#submitButton").style.display= "flex";
-  } else if (subscriptionsNumberValue == 10) {
-    document.querySelector("#subscriptionContainer1").style.display = "flex";
-    document.querySelector("#subscriptionContainer2").style.display = "flex";
-    document.querySelector("#subscriptionContainer3").style.display = "flex";
-    document.querySelector("#subscriptionContainer4").style.display = "flex";
-    document.querySelector("#subscriptionContainer5").style.display = "flex";
-    document.querySelector("#subscriptionContainer6").style.display = "flex";
-    document.querySelector("#subscriptionContainer7").style.display = "flex";
-    document.querySelector("#subscriptionContainer8").style.display = "flex";
-    document.querySelector("#subscriptionContainer9").style.display = "flex";
-    document.querySelector("#subscriptionContainer10").style.display = "flex";
-    document.querySelector("#submitButton").style.display= "flex";
+  subscriptionsNumberValue = parseInt(document.getElementById("subscriptionsNumber").value);
+  for (let i = 1; i <= 10; i++) {
+    const currentInput = document.querySelector(`#subscriptionContainer${i}`);
+    currentInput.style.display = i <= subscriptionsNumberValue ? 'flex' : 'none';
   }
+
+  document.querySelector("#submitButton").style.display = "flex";
 }
-
-
-

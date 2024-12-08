@@ -1,53 +1,50 @@
-html {zoom: 75%;}
+html {
+  zoom: 75%;
+}
 
-body { 
-    background-color:rgb(68, 4, 4);
-} 
+body {
+  background-color: rgb(68, 4, 4);
+}
 
-  
-  /* Add a black background color to the top navigation */
-  .topnav {
-    background-color: #333;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    
-  }
-  
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 30px;
-    height: 50px;
-    
-  }
-  
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
 
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #f31a1a;
-    color: white;
-  }
+}
 
-  #logo {
-    width: 200px;
-  }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 30px;
+  height: 50px;
+
+}
+
+.topnav a.active {
+  background-color: #f31a1a;
+  color: white;
+}
+
+#logo {
+  width: 200px;
+}
 
 
 #all {
   display: flex;
   justify-content: space-around;
-  
+
 }
 
 #title {
-  color: white; 
+  color: white;
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
 
 
@@ -59,17 +56,7 @@ body {
   width: 250px;
 }
 
-#ytext { 
-  color: white;
-  font-size: 19px;
-  padding: 10px;
-  border: honeydew;
-  border-width: 5px;
-  border-style: double;
-  margin-left: 20px; 
-} 
-
-#dctext { 
+#ytext {
   color: white;
   font-size: 19px;
   padding: 10px;
@@ -79,23 +66,32 @@ body {
   margin-left: 20px;
 }
 
+#dctext {
+  color: white;
+  font-size: 19px;
+  padding: 10px;
+  border: honeydew;
+  border-width: 5px;
+  border-style: double;
+  margin-left: 20px;
+}
 
-#right { 
-width:50%;
-text-align:center;
-color:white;
-border-width: 5px;
-border-style: solid;
-margin-left: 20px; 
-padding: 20px;
-} 
+#right {
+  width: 50%;
+  text-align: center;
+  color: white;
+  border-width: 5px;
+  border-style: solid;
+  margin-left: 20px;
+  padding: 20px;
+}
 
 #amologo {
   width: 300px;
   height: 170px;
-} 
+}
 
-#atext { 
+#atext {
   color: white;
   font-size: 19px;
   padding: 10px;
@@ -109,11 +105,11 @@ padding: 20px;
   display: flex;
   justify-content: center;
   background-color: rgb(29, 28, 28);
-  width:fit-content;
+  width: fit-content;
   border: honeydew;
   border-width: 5px;
   border-style: ridge;
-  
+
   margin: 30px auto;
   padding: 30px;
   box-shadow: 20px 10px 7px rgb(43, 42, 42);
@@ -125,12 +121,12 @@ padding: 20px;
   font-weight: bolder;
 }
 
-.restartButton{
+.restartButton {
   width: 120px;
   background-color: rgb(83, 80, 80);
-  color:white;
-  font-size:30px;
+  color: white;
+  font-size: 30px;
   margin: 0px 46%;
-  text-decoration:none;
+  text-decoration: none;
 
 }

@@ -1,57 +1,56 @@
-html {zoom: 90%;}
+html {
+  zoom: 90%;
+}
 
 
-body { 
-    background-color:rgb(68, 4, 4);
+body {
+  background-color: rgb(68, 4, 4);
 }
 
 
 .topnav {
-    background-color: #333;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-  }
-  
-  
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 30px;
-    transition: height 3s, transform 3s;
-    height: 50px;
-    
-  }
-  
-  .topnav a {
-    transition-timing-function: ease;
-  } 
-  
-  .topnav a:hover {
-    background-color: rgb(219, 92, 92);
-    color: black;
-    height: 150px;
-    transform: rotate(360deg) ;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #f31a1a;
-    color: white;
-  }
-
-#logo {
-  width: 200px;
-
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
 }
 
 
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 30px;
+  transition: height 3s, transform 3s;
+  height: 50px;
+
+}
+
+.topnav a {
+  transition-timing-function: ease;
+}
+
+.topnav a:hover {
+  background-color: rgb(219, 92, 92);
+  color: black;
+  height: 150px;
+  transform: rotate(360deg);
+}
+
+.topnav a.active {
+  background-color: #f31a1a;
+  color: white;
+}
+
+#logo {
+  width: 200px;
+}
+
 #subscriptionsNumber {
   font-size: 24px;
-} 
+}
 
 #title {
   color: white;
@@ -70,91 +69,63 @@ body {
   font-size: 30px;
   font-weight: bolder;
   background-color: red;
- 
-}
-  
- 
 
-.user_input{
+}
+
+.user_input {
   display: flex;
   flex-direction: column;
 }
 
-#subscriptionContainer1{
-  display:flex;
-  flex-direction:row;
+#subscriptionContainer1 {
+  display: flex;
+  flex-direction: row;
   padding: 20px;
 
 }
 
+.center {
 
-.center{
-  
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
-#subscriptionContainer1 {
-  padding:20px;
-}
 
-#subscriptionContainer2 {
-  padding:20px;
-}
 
-#subscriptionContainer3 {
-  padding:20px;
-}
-
-#subscriptionContainer4 {
-  padding:20px;
-}
-
-#subscriptionContainer5 {
-  padding:20px;
-}
-
-#subscriptionContainer6 {
-  padding:20px;
-}
-
-#subscriptionContainer7 {
-  padding:20px;
-}
-
-#subscriptionContainer8 {
-  padding:20px;
-}
-
-#subscriptionContainer9 {
-  padding:20px;
-}
-
+#subscriptionContainer1,
+#subscriptionContainer2,
+#subscriptionContainer3,
+#subscriptionContainer4,
+#subscriptionContainer5,
+#subscriptionContainer6,
+#subscriptionContainer7,
+#subscriptionContainer8,
+#subscriptionContainer9,
 #subscriptionContainer10 {
   padding:20px;
 }
 
-.subscriptions{
+.subscriptions {
   width: 100px;
-  height:20px;
+  height: 20px;
   margin: 13px;
 
 }
 
-.statusChoice{
-  height:20px;
+.statusChoice {
+  height: 20px;
   margin: 13px;
 }
 
-#submitButton{
+#submitButton {
   width: 100px;
   background-color: rgb(83, 80, 80);
   color: white;
   font-size: 12px;
-  padding:4px 30px;
+  padding: 4px 30px;
   text-decoration: none;
 }
 
-label{
-  color:white
+label {
+  color: white
 }
