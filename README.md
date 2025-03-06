@@ -1,0 +1,3 @@
+Pocketguard is a simple demo project created in the summer intensive of All Star Code (Aug 2021) in a team of 3 to help users save money on online service subscriptions. The web app allows users to input their subscriptions, specify the maximum amount they would like to pay for their subscriptions and rank them based on the category they fall into (Movies and TV Shows, Shopping, Music, Gaming, Utilities) on a scale of 1 - 5 (1 highest priority, 5 lowest priority). Pocketguard suggests which subscriptions to unsubscribe from based on their rankings and the maximum price the user is willing to pay for. Improved the functionality and design of the web application (Dec 2024).
+
+Made using: HTML, CSS, Javascript
