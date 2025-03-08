@@ -88,6 +88,9 @@ select {
   margin: 20px 40px;
 }
 
+li {
+  display: inline;
+}
 ol {
   padding-left: 350px;
 }

@@ -16,7 +16,7 @@ for (let i = 0; i < number; i++) {
     if (array[i].status == "Active") {
         pElement.id = "subsText";
         pElement.innerHTML = "You are currently subscribed and using " + array[i].name + " paying $" + array[i].price;
-        imgElement.src = "html/images/" + array[i].name + ".png";
+        imgElement.src = "../images/" + array[i].name + ".png";
         imgElement.id = "slogo";
 
         divElement.id = "subs";
@@ -34,7 +34,7 @@ for (let i = 0; i < number; i++) {
     else if (array[i].status == "Inactive") {
         pElement.id = "unsubsText";
         pElement.innerHTML = "You are subscribed but aren't using " + array[i].name + " ($" + array[i].price + ")";
-        imgElement.src = "html/images/" + array[i].name + ".png";
+        imgElement.src = "../images/" + array[i].name + ".png";
         imgElement.id = "slogo";
 
         divElement.id = "unsubs";

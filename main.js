@@ -48,7 +48,7 @@ function buttonClick() {
 
   localStorage.setItem('subscriptionsArray', JSON.stringify(subscriptionsArray));
   localStorage.setItem("number", subscriptionsNumberValue);
-  window.location.href = 'filter.html';
+  window.location.href = 'html/filter.html';
 }
 
 function onChange() {

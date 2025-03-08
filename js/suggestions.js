@@ -23,7 +23,7 @@ function inactiveSubsCheck() {
     pElement.id = "atext";
     pElement.innerHTML = "We suggest that you unsubscribe to " + inactiveSubscriptions[i] + " as you have listed it as inactive";
     imgElement.id = "amologo";
-    imgElement.src = "html/images/" + inactiveSubscriptions[i] + ".png";
+    imgElement.src = "../images/" + inactiveSubscriptions[i] + ".png";
 
     rightSide.appendChild(imgElement);
     rightSide.appendChild(pElement);
@@ -67,7 +67,7 @@ function unsubscribeLogic() {
       pElement.id = "atext";
       pElement.innerHTML = "We suggest that you unsubscribe to " + unsubscribeArray[i].name + " as " + unsubscribeArray[i].category + " category have lower priority";
       imgElement.id = "amologo";
-      imgElement.src = "html/images/" + unsubscribeArray[i].name + ".png";
+      imgElement.src = "../images/" + unsubscribeArray[i].name + ".png";
       rightSide.appendChild(imgElement);
       rightSide.appendChild(pElement);
 

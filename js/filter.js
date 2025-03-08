@@ -44,6 +44,6 @@ function clickLogic() {
         localStorage.setItem('categoriesRank', JSON.stringify(ranks));
         localStorage.setItem('targetCost', targetPrice);
         localStorage.setItem('inactiveCost', totalPrice);
-        window.location.href = 'subscriptions.html';
+        window.location.href = '../html/subscriptions.html';
     }
 }
