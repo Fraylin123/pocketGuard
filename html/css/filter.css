@@ -12,7 +12,6 @@ body {
   display: flex;
   justify-content: center;
   justify-content: space-around;
-
 }
 
 .topnav a.active {
@@ -20,21 +19,31 @@ body {
   color: white;
 }
 
-
-
 #logo {
   width: 200px;
-
 }
 
-#stuff {
+#costHeading {
   color: white;
   display: flex;
   justify-content: center;
 }
 
+.bills {
+  color: white;
+  border: 5px solid black;
+}
 
-.box1 {
+.question p {
+  color: white;
+}
+
+#box1 {
+  display: flex;
+  justify-content: center;
+}
+
+.box1content {
   width: 400px;
   height: 200px;
   border: 1px solid #999;
@@ -44,12 +53,14 @@ body {
   border-radius: 5px;
   box-shadow: 4px 4px #ccc;
   font-family: 'sans-serif';
-
 }
 
-#box1content {
+#main {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 100px;
+  padding: 20px;
 }
 
 .box2 {
@@ -64,14 +75,8 @@ body {
   margin: 0px 10px
 }
 
-
-
-#main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 100px;
-  padding: 20px;
+.boxTitles {
+  text-align: center;
 }
 
 select {
@@ -81,25 +86,6 @@ select {
 
 .dropboxes {
   margin: 20px 40px;
-
-}
-
-#fix {
-  margin: 1px 40px;
-  ;
-}
-
-.boxTitles {
-  text-align: center;
-}
-
-.bills {
-  color: white;
-  border: 5px solid black;
-}
-
-li {
-  display: inline;
 }
 
 ol {
@@ -118,10 +104,6 @@ span {
   float: right;
   margin-right: 80px;
   margin-bottom: 20px;
-}
-
-.question p {
-  color: white;
 }
 
 input {
