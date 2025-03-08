@@ -38,6 +38,7 @@ body {
   border-style: double;
 }
 
+#left,
 #right {
   border-width: 2px;
   border-style: dashed;
@@ -51,13 +52,13 @@ body {
   padding: 20px;
 }
 
-#activesubs {
+#activesubs,
+#inactivesubs {
   color: rgb(255, 255, 255);
   font-size: 30px;
   justify-content: left;
   display: flex;
   padding: 10px;
-
 }
 
 #subsText {
@@ -68,39 +69,12 @@ body {
   border-width: 5px;
   border-style: double;
   margin-left: 20px;
-
-}
-
-#left {
-  border-width: 2px;
-  border-style: dashed;
-  border-color: white;
-  padding: 20px;
-  background-color: rgb(46, 45, 45);
 }
 
 #unsubs {
   display: flex;
   padding: 20px;
 }
-
-#inactivesubs {
-  color: rgb(255, 255, 255);
-  font-size: 30px;
-  justify-content: left;
-  display: flex;
-  padding: 10px;
-
-}
-
-#amologo {
-  width: 275px;
-  height: 170px;
-  border: honeydew;
-  border-width: 5px;
-  border-style: double;
-}
-
 
 #unsubsText {
   color: white;
@@ -119,12 +93,17 @@ body {
   border: honeydew;
   border-width: 5px;
   border-style: ridge;
-
   margin: 30px auto;
   padding: 30px;
   box-shadow: 20px 10px 7px rgb(43, 42, 42);
+}
 
-
+#bottom {
+  color: white;
+  font-weight: bold;
+  padding-left: 400px;
+  padding-right: 400px;
+  font-size: 25px;
 }
 
 #totalc {
@@ -136,16 +115,7 @@ body {
   opacity: fixed;
 }
 
-
-#bottom {
-  color: white;
-  font-weight: bold;
-  padding-left: 400px;
-  padding-right: 400px;
-  font-size: 25px;
-}
-
-#button {
+#nextButton {
   width: 100px;
   background-color: rgb(83, 80, 80);
   color: white;
@@ -154,7 +124,7 @@ body {
   text-decoration: none;
 }
 
-#button2 {
+#backButton {
   width: 100px;
   background-color: rgb(83, 80, 80);
   color: white;

@@ -12,7 +12,6 @@ body {
   display: flex;
   justify-content: center;
   justify-content: space-around;
-
 }
 
 .topnav a {
@@ -22,7 +21,6 @@ body {
   text-decoration: none;
   font-size: 30px;
   height: 50px;
-
 }
 
 .topnav a.active {
@@ -34,46 +32,15 @@ body {
   width: 200px;
 }
 
-
 #all {
   display: flex;
   justify-content: space-around;
-
 }
 
 #title {
   color: white;
   display: flex;
   justify-content: center;
-}
-
-
-#ylogo {
-  width: 250px;
-}
-
-#dclogo {
-  width: 250px;
-}
-
-#ytext {
-  color: white;
-  font-size: 19px;
-  padding: 10px;
-  border: honeydew;
-  border-width: 5px;
-  border-style: double;
-  margin-left: 20px;
-}
-
-#dctext {
-  color: white;
-  font-size: 19px;
-  padding: 10px;
-  border: honeydew;
-  border-width: 5px;
-  border-style: double;
-  margin-left: 20px;
 }
 
 #right {
@@ -106,10 +73,7 @@ body {
   justify-content: center;
   background-color: rgb(29, 28, 28);
   width: fit-content;
-  border: honeydew;
-  border-width: 5px;
-  border-style: ridge;
-
+  border: honeydew 5px ridge;
   margin: 30px auto;
   padding: 30px;
   box-shadow: 20px 10px 7px rgb(43, 42, 42);
@@ -128,5 +92,4 @@ body {
   font-size: 30px;
   margin: 0px 46%;
   text-decoration: none;
-
 }

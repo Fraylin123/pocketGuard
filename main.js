@@ -1,15 +1,13 @@
 let subscriptionsNumberValue = 0;
 let subscriptionsArray = [];
-
 const subscriptionsNumber = document.getElementById("subscriptionsNumber");
 subscriptionsNumber.addEventListener("change", onChange);
 let button = document.getElementById("submitButton");
 button.onclick = buttonClick;
 
-for (let i = 2; i <= 10; i++) {
+for (let i = 2; i <= 10; i++) { //Initially, hide all the containers except the first one
   document.querySelector(`#subscriptionContainer${i}`).style.display = "none";
 }
-
 
 function buttonClick() {
   subscriptionsNumberValue = document.getElementById("subscriptionsNumber").value;
@@ -24,6 +22,7 @@ function buttonClick() {
       subscriptionsArray = [];
       return;
     }
+
     if (statusElement.length < 1) {
       alert(nameElement + " is missing an active/inactive value, please fix to continue");
       subscriptionsArray = [];
@@ -50,8 +49,6 @@ function buttonClick() {
   localStorage.setItem('subscriptionsArray', JSON.stringify(subscriptionsArray));
   localStorage.setItem("number", subscriptionsNumberValue);
   window.location.href = 'filter.html';
-
-
 }
 
 function onChange() {
@@ -60,6 +57,5 @@ function onChange() {
     const currentInput = document.querySelector(`#subscriptionContainer${i}`);
     currentInput.style.display = i <= subscriptionsNumberValue ? 'flex' : 'none';
   }
-
   document.querySelector("#submitButton").style.display = "flex";
 }

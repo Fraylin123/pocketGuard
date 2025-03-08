@@ -2,11 +2,9 @@ html {
   zoom: 90%;
 }
 
-
 body {
   background-color: rgb(68, 4, 4);
 }
-
 
 .topnav {
   background-color: #333;
@@ -16,7 +14,6 @@ body {
   justify-content: space-around;
 }
 
-
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -25,31 +22,10 @@ body {
   font-size: 30px;
   transition: height 3s, transform 3s;
   height: 50px;
-
-}
-
-.topnav a {
-  transition-timing-function: ease;
-}
-
-.topnav a:hover {
-  background-color: rgb(219, 92, 92);
-  color: black;
-  height: 150px;
-  transform: rotate(360deg);
-}
-
-.topnav a.active {
-  background-color: #f31a1a;
-  color: white;
 }
 
 #logo {
   width: 200px;
-}
-
-#subscriptionsNumber {
-  font-size: 24px;
 }
 
 #title {
@@ -69,7 +45,14 @@ body {
   font-size: 30px;
   font-weight: bolder;
   background-color: red;
+}
 
+label {
+  color: white
+}
+
+#subscriptionsNumber {
+  font-size: 24px;
 }
 
 .user_input {
@@ -81,16 +64,7 @@ body {
   display: flex;
   flex-direction: row;
   padding: 20px;
-
 }
-
-.center {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 
 #subscriptionContainer1,
 #subscriptionContainer2,
@@ -102,19 +76,24 @@ body {
 #subscriptionContainer8,
 #subscriptionContainer9,
 #subscriptionContainer10 {
-  padding:20px;
+  padding: 20px;
 }
 
 .subscriptions {
   width: 100px;
   height: 20px;
   margin: 13px;
-
 }
 
 .statusChoice {
   height: 20px;
   margin: 13px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #submitButton {
@@ -124,8 +103,4 @@ body {
   font-size: 12px;
   padding: 4px 30px;
   text-decoration: none;
-}
-
-label {
-  color: white
 }

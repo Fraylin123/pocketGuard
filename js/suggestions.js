@@ -8,12 +8,9 @@ const rightSide = document.getElementById("right");
 const calculations = document.getElementsByClassName("calculations")[0];
 let calculatedCost = 0; //Cost that met the target value requirement the user specified in filter.js page
 let unsubscribeArray = []; //Array that contains the name of the subscriptions that the user should unsubscribe from
-
-
 let subscriptionJSON = [{ "Movies": ["Netflix", "Hulu"] }, { "Music": ["Spotify Premium", "Soundcloud Music"] }, { "Shopping": ["Amazon Prime", "Walmart +"] }, { "Utilities": ["Microsoft 365", "Avast"] }, { "Gaming": ["Xbox Gold", "Playstation +"] }];
 
 //Gets the category of the subscription specified (value)
-
 function getKeyByValue(object, value) {
   return Object.keys(object).find(key => object[key] === value);
 }
@@ -59,12 +56,8 @@ function unsubscribeLogic() {
         else {
           unsubscribeArray.push({ "name": activeSubscriptions[j].name, "category": currentCategory })
         }
-
       }
-
-
     }
-
   }
 
   if (unsubscribeArray.length > 0) {
@@ -80,15 +73,12 @@ function unsubscribeLogic() {
 
     }
     return true;
-
   }
-
 }
 
 const pElement1 = document.createElement("p");
 const pElement2 = document.createElement("p");
 const pElement3 = document.createElement("p");
-
 let inactiveCondition = inactiveSubscriptions.length > 0 && subscriptionsCost <= inactiveCost
 let unsubscribeCondition = subscriptionsCost > targetCost
 
@@ -101,7 +91,6 @@ if (inactiveCondition) {
   calculations.appendChild(pElement2);
   calculations.appendChild(pElement3);
 }
-
 
 if (unsubscribeCondition) {
   unsubscribeLogic()
